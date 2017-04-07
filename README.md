@@ -1,5 +1,3 @@
-# Colorizr is a part of React Challenges made by [rtivital](https://github.com/rtivital)
-
 ## Technologies
 * [Webpack](https://webpack.github.io/) as module bundler
 * [Babel](https://babeljs.io/) for js and jsx transpiling
