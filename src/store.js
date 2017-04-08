@@ -7,7 +7,7 @@ const middlewares = [
 ];
 
 // Prevent redux devTools initialization in production
-const store = createStore(rootReducer, compose(
+const store = createStore(compose(
   applyMiddleware(...middlewares),
   window.devToolsExtension && process.env.NODE_ENV === 'development'
     ? window.devToolsExtension()
