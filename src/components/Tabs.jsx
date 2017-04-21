@@ -1,12 +1,9 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class Tabs extends PureComponent {
+export default class Tabs extends Component {
   static propTypes = {
     selected: PropTypes.number,
-    children: PropTypes.oneOfType([
-      PropTypes.array,
-      PropTypes.element,
-    ]).isRequired,
+    children: PropTypes.any.isRequired,
   }
 
   static defaultProps = {

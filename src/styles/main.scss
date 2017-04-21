@@ -86,3 +86,10 @@ textarea{
   display:block;
   clear:both;
 }
+
+.something-content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}

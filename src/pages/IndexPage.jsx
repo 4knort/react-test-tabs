@@ -1,17 +1,32 @@
 import React from 'react';
-import { Tabs, Pane } from 'components';
+import { Tabs, Pane, PaneContent } from 'components';
 
 const IndexPage = () => (
   <div className="index-page">
     <Tabs>
       <Pane label="Tab 1">
-        <div>This is my indexPage tab 1 contents!</div>
+        <PaneContent label="content 1">
+          <div>something</div>
+        </PaneContent>
+        <PaneContent label="content 2">
+          <div>something-more</div>
+        </PaneContent>
       </Pane>
       <Pane label="Tab 2">
-        <div>This is my indexPage tab 2 contents!</div>
+        <PaneContent label="content 1">
+          <div>something 2</div>
+        </PaneContent>
+        <PaneContent label="content 2">
+          <div>something-more 2</div>
+        </PaneContent>
       </Pane>
       <Pane label="Tab 3">
-        <div>This is my indexPage tab 3 contents!</div>
+        <PaneContent label="content 1">
+          <div>something 3</div>
+        </PaneContent>
+        <PaneContent label="content 2">
+          <div>something-more 3</div>
+        </PaneContent>
       </Pane>
     </Tabs>
   </div>

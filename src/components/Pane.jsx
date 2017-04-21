@@ -1,15 +1,48 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
-const Pane = ({ children }) => {
-  return (
-    <div>
-      {children}
-    </div>
-  );
-};
+export default class Pane extends Component {
+  static propTypes = {
+    selected: PropTypes.number,
+    children: PropTypes.any.isRequired,
+  }
 
-Pane.propTypes = {
-  children: PropTypes.element.isRequired,
-};
+  static defaultProps = {
+    selected: 0,
+  }
 
-export default Pane;
+  state = {
+    selected: this.props.selected,
+  }
+
+  handleClick = (index) => {
+    this.setState({
+      selected: index,
+    });
+  }
+
+  renderContent() {
+    const paneContent = this.props.children.map((child, index) => {
+      const activeClass = (this.state.selected === index ? 'active' : '');
+      return (
+        <div key={`paneContent-${index}`} className="something">
+          <div className="something-title" onClick={() => { this.handleClick(index) }}>{child.props.label}</div>
+          <div className={`something-content ${activeClass}`}>{child.props.children}</div>
+        </div>
+      );
+    });
+
+    return (
+      <div>
+        {paneContent}
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="omg">
+        {this.renderContent()}
+      </div>
+    );
+  }
+}
